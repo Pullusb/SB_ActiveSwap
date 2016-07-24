@@ -8,8 +8,8 @@ Allow to iterate active object over selected with shortcuts (shift+\`: next, ctr
 
 ### Description
 
-**press shift+\`** - next object in selection become active  
-**press ctrl+shift+\`** - previous object in selection become active
+**press shift+\`**  next object in selection become active  
+**press ctrl+shift+\`**  previous object in selection become active
 
 Shortcut are for qwerty layout (since the '\`' key is easily accessible to the left hand with modifier pressed)
 You must change it in source code if you are on azerty.
