@@ -45,20 +45,23 @@ def AS_SwapObject(C, state):
     if C.mode == 'OBJECT':
         if C.selected_objects:
             if len(C.selected_objects) > 1:
-                if state: #swap
-                    #objs = C.selected_objects
-                    #act = C.active_object
-                    #pos =  objs.index(act)
-                    #C.scene.objects.active = objs[(pos+1) % len(objs)]
+                if not C.active_object:
+                    C.scene.objects.active = C.selected_objects[0]
+                else:
+                    if state: #swap
+                        #objs = C.selected_objects
+                        #act = C.active_object
+                        #pos =  objs.index(act)
+                        #C.scene.objects.active = objs[(pos+1) % len(objs)]
 
-                    C.scene.objects.active = C.selected_objects[\
-                    (C.selected_objects.index(C.active_object)+state) % len(C.selected_objects)]
+                        C.scene.objects.active = C.selected_objects[\
+                        (C.selected_objects.index(C.active_object)+state) % len(C.selected_objects)]
 
-                else: # deselect and pass to nextActive
-                    current = C.scene.objects.active
-                    C.scene.objects.active = C.selected_objects[\
-                    (C.selected_objects.index(C.active_object)+1) % len(C.selected_objects)]
-                    current.select = False
+                    else: # deselect and pass to nextActive
+                        current = C.scene.objects.active
+                        C.scene.objects.active = C.selected_objects[\
+                        (C.selected_objects.index(C.active_object)+1) % len(C.selected_objects)]
+                        current.select = False
 
             else:
                 pass #dont do anything
@@ -97,14 +100,17 @@ def AS_SwapObject(C, state):
 
         if C.selected_editable_bones:#C.selected_bones
             if len(C.selected_editable_bones) > 1:
-                if state:
-                    C.object.data.edit_bones.active = C.selected_editable_bones[\
-                    (C.selected_editable_bones.index(C.active_bone)+state) % len(C.selected_editable_bones)]
+                if not C.active_bone:
+                    C.object.data.edit_bones.active = C.selected_editable_bones[0]
                 else:
-                    current = C.active_bone
-                    C.object.data.edit_bones.active = C.selected_editable_bones[\
-                    (C.selected_editable_bones.index(C.active_bone)+state) % len(C.selected_editable_bones)]
-                    current.select = False
+                    if state:
+                        C.object.data.edit_bones.active = C.selected_editable_bones[\
+                        (C.selected_editable_bones.index(C.active_bone)+state) % len(C.selected_editable_bones)]
+                    else:
+                        current = C.active_bone
+                        C.object.data.edit_bones.active = C.selected_editable_bones[\
+                        (C.selected_editable_bones.index(C.active_bone)+state) % len(C.selected_editable_bones)]
+                        current.select = False
 
         ##forceRefresh
         refreshMode(C)
@@ -113,14 +119,17 @@ def AS_SwapObject(C, state):
     elif C.mode == 'POSE':
         if C.selected_pose_bones:
             if len(C.selected_pose_bones) > 1:
-                if state:
-                    C.object.data.bones.active = C.object.data.bones[C.selected_pose_bones[\
-                    (C.selected_pose_bones.index(C.active_pose_bone)+state) % len(C.selected_pose_bones)].name]
+                if not C.active_pose_bone:
+                    C.object.data.bones.active = C.selected_pose_bones[0].bone
                 else:
-                    current = C.active_bone
-                    C.object.data.bones.active = C.object.data.bones[C.selected_pose_bones[\
-                    (C.selected_pose_bones.index(C.active_pose_bone)+state) % len(C.selected_pose_bones)].name]
-                    current.select = False
+                    if state:
+                        C.object.data.bones.active = C.object.data.bones[C.selected_pose_bones[\
+                        (C.selected_pose_bones.index(C.active_pose_bone)+state) % len(C.selected_pose_bones)].name]
+                    else:
+                        current = C.active_bone
+                        C.object.data.bones.active = C.object.data.bones[C.selected_pose_bones[\
+                        (C.selected_pose_bones.index(C.active_pose_bone)+state) % len(C.selected_pose_bones)].name]
+                        current.select = False
         ##forceRefresh
         refreshMode(C)
         # C.scene.update()#not working
