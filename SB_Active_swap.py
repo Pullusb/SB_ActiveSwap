@@ -29,15 +29,14 @@ bl_info = {
 import bpy
 import bmesh
 
-C = bpy.context
-
-def refreshMode():
-    currentMode = bpy.context.object.mode
+def refreshMode(C):
+    '''Update scene by going in object mode and returning in previous mode (for armature update)'''
+    currentMode = C.object.mode
     bpy.ops.object.mode_set() #default is mode='OBJECT'
     bpy.ops.object.mode_set(mode=currentMode)
 
-def AS_SwapObject(state):
-    '''swap Active object to next or previous according to parameter (1 or -1)'''
+def AS_SwapObject(C, state):
+    '''swap Active object to next or previous according to parameter (1 next, -1 prev, 0 deselect)'''
 
     ###control > what to do if only one object selected
     ###if possible find selection order (selection history ?)
@@ -108,7 +107,7 @@ def AS_SwapObject(state):
                     current.select = False
 
         ##forceRefresh
-        refreshMode()
+        refreshMode(C)
         # C.scene.update()#not working
 
     elif C.mode == 'POSE':
@@ -123,7 +122,7 @@ def AS_SwapObject(state):
                     (C.selected_pose_bones.index(C.active_pose_bone)+state) % len(C.selected_pose_bones)].name]
                     current.select = False
         ##forceRefresh
-        refreshMode()
+        refreshMode(C)
         # C.scene.update()#not working
 
     elif C.mode =='PAINT_WEIGHT':
@@ -132,26 +131,10 @@ def AS_SwapObject(state):
             if len(VG) > 1:
                 if state:
                     VG.active_index = (VG.active_index+state) % len(VG)
-        '''
-        ### iterate over bones (not changing vertex_groups selection)
-        if C.selected_pose_bones:
-            armObj = C.selected_pose_bones[0].id_data
-            if len(C.selected_pose_bones) > 1:
-                if state:
-                    armObj.data.bones.active = armObj.data.bones[C.selected_pose_bones[\
-                        (C.selected_pose_bones.index(C.active_pose_bone)+state) % len(C.selected_pose_bones)].name]
-                else:
-                    current = C.active_pose_bone
-                    armObj.data.bones.active = armObj.data.bones[C.selected_pose_bones[\
-                    (C.selected_pose_bones.index(C.active_pose_bone)+state) % len(C.selected_pose_bones)].name]
-                    current.select = False
-        ##forceRefresh
-        refreshMode()
-        '''
 
 
 class AS_DeselectActive(bpy.types.Operator):
-    bl_idname = "view3d.deselect_active"
+    bl_idname = "selection.deselect_active"
     bl_label = "Deselect Active"
     bl_description = "Delelect active and set next item in selection to active"
     bl_options = {"REGISTER"}
@@ -161,11 +144,11 @@ class AS_DeselectActive(bpy.types.Operator):
         return True
 
     def execute(self, context):
-        AS_SwapObject(0)
+        AS_SwapObject(context, 0)
         return {"FINISHED"}
 
 class AS_ActiveNext(bpy.types.Operator):
-    bl_idname = "view3d.as_active_next"
+    bl_idname = "selection.as_active_next"
     bl_label = "Active Next"
     bl_description = "Active next item in selection"
     bl_options = {"REGISTER"}
@@ -175,12 +158,12 @@ class AS_ActiveNext(bpy.types.Operator):
         return True
 
     def execute(self, context):
-        AS_SwapObject(1)
+        AS_SwapObject(context, 1)
         return {"FINISHED"}
 
 
 class AS_ActivePrev(bpy.types.Operator):
-    bl_idname = "view3d.as_active_prev"
+    bl_idname = "selection.as_active_prev"
     bl_label = "Active Prev"
     bl_description = "Active previous item in selection"
     bl_options = {"REGISTER"}
@@ -190,7 +173,7 @@ class AS_ActivePrev(bpy.types.Operator):
         return True
 
     def execute(self, context):
-        AS_SwapObject(-1)
+        AS_SwapObject(context, -1)
         return {"FINISHED"}
 
 ###---keymap---------------
@@ -199,9 +182,9 @@ addon_keymaps = []
 def register_keymaps():
     addon = bpy.context.window_manager.keyconfigs.addon
     km = addon.keymaps.new(name = "3D View", space_type = "VIEW_3D")
-    kmi = km.keymap_items.new("view3d.as_active_next", type = "ACCENT_GRAVE", value = "PRESS", shift = True)
-    kmi = km.keymap_items.new("view3d.as_active_prev", type = "ACCENT_GRAVE", value = "PRESS", shift = True, ctrl = True)
-    kmi = km.keymap_items.new("view3d.deselect_active", type = "ACCENT_GRAVE", value = "PRESS", shift = True, alt = True)
+    kmi = km.keymap_items.new("selection.as_active_next", type = "ACCENT_GRAVE", value = "PRESS", shift = True)
+    kmi = km.keymap_items.new("selection.as_active_prev", type = "ACCENT_GRAVE", value = "PRESS", shift = True, ctrl = True)
+    kmi = km.keymap_items.new("selection.deselect_active", type = "ACCENT_GRAVE", value = "PRESS", shift = True, alt = True)
     addon_keymaps.append(km)
 
 
