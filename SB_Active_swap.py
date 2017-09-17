@@ -209,7 +209,7 @@ def unregister_keymaps():
 ###---register--------------
 
 def register():
-    if not bpy.app.background;
+    if not bpy.app.background:
         bpy.utils.register_module(__name__)
         register_keymaps()
 
