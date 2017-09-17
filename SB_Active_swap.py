@@ -19,7 +19,7 @@ bl_info = {
     "name": "Active swap",
     "description": "Allow to iterate active object over selected with shortcuts (shift+`: next, ctrl+shift+` : prev)",
     "author": "Samuel Bernou",
-    "version": (1, 0, 0),
+    "version": (1, 0, 1),
     "blender": (2, 77, 0),
     "location": "View3D",
     "warning": "swaping in armature working a bit randomly...",
@@ -209,9 +209,9 @@ def unregister_keymaps():
 ###---register--------------
 
 def register():
-    if not bpy.app.background:
-        register_keymaps()
+    if not bpy.app.background;
         bpy.utils.register_module(__name__)
+        register_keymaps()
 
 def unregister():
     if not bpy.app.background:
