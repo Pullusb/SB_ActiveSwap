@@ -1,8 +1,7 @@
 # SB_ActiveSwap
 
 Allow to iterate active object over selected with shortcuts (shift+\`: next, ctrl+shift+\` : prev)
-
-> /!\ may behave unexpectedly in armature edit/pose mode
+<!--> /!\ may behave unexpectedly in armature edit/pose mode -->
 
 ---
 
@@ -23,6 +22,10 @@ If I finish it someday I'll post a version with valid shortcut for french keyboa
 - Active vertex/edge/face swapping in Edit mode
 
 ### Update:
+
+16/11/2017
+- Shortcuts are enabled all over editors (not just 3D-view) imply far less mouse trajectory ;)
+for exemple : allow to let the cursor in properties (over constraints or modifiers...) and quickly iterate to change parameter.
 
 21/12/2016
 
