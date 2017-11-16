@@ -190,7 +190,8 @@ class AS_ActivePrev(bpy.types.Operator):
 addon_keymaps = []
 def register_keymaps():
     addon = bpy.context.window_manager.keyconfigs.addon
-    km = addon.keymaps.new(name = "3D View", space_type = "VIEW_3D")
+    #km = addon.keymaps.new(name = "3D View", space_type = "VIEW_3D")#viewD only
+    km = addon.keymaps.new(name = "Window",space_type='EMPTY', region_type='WINDOW')#all view
     kmi = km.keymap_items.new("selection.as_active_next", type = "ACCENT_GRAVE", value = "PRESS", shift = True)
     kmi = km.keymap_items.new("selection.as_active_prev", type = "ACCENT_GRAVE", value = "PRESS", shift = True, ctrl = True)
     kmi = km.keymap_items.new("selection.deselect_active", type = "ACCENT_GRAVE", value = "PRESS", shift = True, alt = True)
@@ -210,8 +211,8 @@ def unregister_keymaps():
 
 def register():
     if not bpy.app.background:
-        bpy.utils.register_module(__name__)
         register_keymaps()
+        bpy.utils.register_module(__name__)
 
 def unregister():
     if not bpy.app.background:
