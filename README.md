@@ -1,7 +1,7 @@
 # SB_ActiveSwap
 
 Allow to iterate active object over selected with shortcuts (shift+\`: next, ctrl+shift+\` : prev)
-<!--> /!\ may behave unexpectedly in armature edit/pose mode -->
+<!--may behave unexpectedly in armature edit/pose mode -->
 
 ---
 
