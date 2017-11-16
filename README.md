@@ -1,6 +1,6 @@
 # SB_ActiveSwap
 
-Allow to iterate active object over selected with shortcuts (shift+\`: next, ctrl+shift+\` : prev)
+Allow to iterate active object/bones/vertexgroups in selectionselected with shortcuts (shift+\`: next, ctrl+shift+\` : prev)
 <!--may behave unexpectedly in armature edit/pose mode -->
 
 ---
@@ -11,11 +11,12 @@ Allow to iterate active object over selected with shortcuts (shift+\`: next, ctr
 **press ctrl+shift+\`**  previous object in selection become active
 **press alt+shift+\`**  deselect active object (then next object in selection become active)
 
-In vertex paint mode : iterate over active group
+In vertex paint mode : iterate active group
 
+Note for french:
 Shortcut are for qwerty layout (since the '\`' key is easily accessible to the left hand with modifier pressed)
 You must change it in source code if you are on azerty.
-If I finish it someday I'll post a version with valid shortcut for french keyboard too.
+Someday I'll post a version with valid shortcut for french keyboard too... But what key to take ?!
 
 
 ### TODO:
