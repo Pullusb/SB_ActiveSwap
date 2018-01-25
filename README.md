@@ -14,17 +14,20 @@ Allow to iterate active object/bones/vertexgroups in selectionselected with shor
 
 ### Description
 
-azerty : for Fr version use ² instead of \`  
-**press shift+\`**  next object in selection become active  
-**press ctrl+shift+\`**  previous object in selection become active
-**press alt+shift+\`**  deselect active object (then next object in selection become active)
+The shortcuts use the key directly below escape (the left-most from the number top row). This key changes accoding to keyboard layouts...  
+use \` for qwerty  
+use ² for azerty Fr PC  
+  
+**press shift+key**  next object in selection become active  
+**press ctrl+shift+key**  previous object in selection become active
+**press alt+shift+key**  deselect active object (then next object in selection become active)
 
-In vertex paint mode : iterate active group
-
-Note for french:
+In vertex paint mode : iterate active group  
+  
+<!--Note for french:
 Shortcut are for qwerty layout (since the '\`' key is easily accessible to the left hand with modifier pressed)
 You must change it in source code if you are on azerty.
-Someday I'll post a version with valid shortcut for french keyboard too... But what key to take ?!
+Someday I'll post a version with valid shortcut for french keyboard too... But what key to take ?! -->
 
 
 ### TODO:
