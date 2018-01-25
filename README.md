@@ -1,5 +1,12 @@
 # SB_ActiveSwap
 
+right click, "save Target As"
+## [Download (qwerty)](https://raw.githubusercontent.com/Pullusb/SB_ActiveSwap/master/SB_Active_swap.py)
+(use combination with \` key)
+## [Download (azerty Fr)](https://raw.githubusercontent.com/Pullusb/SB_ActiveSwap/master/SB_Active_swap_azerty_Fr_PC.py)
+(use combination with ² key)  
+
+
 Allow to iterate active object/bones/vertexgroups in selectionselected with shortcuts (shift+\`: next, ctrl+shift+\` : prev)
 <!--may behave unexpectedly in armature edit/pose mode -->
 
@@ -7,6 +14,7 @@ Allow to iterate active object/bones/vertexgroups in selectionselected with shor
 
 ### Description
 
+azerty : for Fr version use ² instead of \`  
 **press shift+\`**  next object in selection become active  
 **press ctrl+shift+\`**  previous object in selection become active
 **press alt+shift+\`**  deselect active object (then next object in selection become active)
