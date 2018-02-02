@@ -1,4 +1,4 @@
-# SB_ActiveSwap
+# Active swap
 
 right click, "save Target As"
 ## [Download (qwerty)](https://raw.githubusercontent.com/Pullusb/SB_ActiveSwap/master/SB_Active_swap.py)
