@@ -29,6 +29,8 @@ bl_info = {
 import bpy
 import bmesh
 
+swap_key = "QUOTE"
+
 def refreshMode(C):
     '''Update scene by going in object mode and returning in previous mode (for armature update)'''
     currentMode = C.object.mode
@@ -193,9 +195,9 @@ def register_keymaps():
     #km = addon.keymaps.new(name = "3D View", space_type = "VIEW_3D")#viewD only
     km = addon.keymaps.new(name = "Window",space_type='EMPTY', region_type='WINDOW')#all view
     #replace following text "QUOTE" by "ACCENT_GRAVE" on qwerty layout (Quote means ² key)
-    kmi = km.keymap_items.new("selection.as_active_next", type = "QUOTE", value = "PRESS", shift = True)
-    kmi = km.keymap_items.new("selection.as_active_prev", type = "QUOTE", value = "PRESS", shift = True, ctrl = True)
-    kmi = km.keymap_items.new("selection.deselect_active", type = "QUOTE", value = "PRESS", shift = True, alt = True)
+    kmi = km.keymap_items.new("selection.as_active_next", type = swap_key, value = "PRESS", shift = True)
+    kmi = km.keymap_items.new("selection.as_active_prev", type = swap_key, value = "PRESS", shift = True, ctrl = True)
+    kmi = km.keymap_items.new("selection.deselect_active", type = swap_key, value = "PRESS", shift = True, alt = True)
     addon_keymaps.append(km)
 
 

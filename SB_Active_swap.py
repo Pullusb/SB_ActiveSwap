@@ -17,7 +17,7 @@ Created by Samuel Bernou
 
 bl_info = {
     "name": "Active swap",
-    "description": "Allow to iterate active object over selected with shortcuts (shift+`: next, ctrl+shift+` : prev)",
+    "description": "Iterate active object over selected with shortcuts (shift+`: next, ctrl+shift+` : prev, deselect active : shift+alt+`)",
     "author": "Samuel Bernou",
     "version": (1, 0, 2),
     "blender": (2, 77, 0),
@@ -28,6 +28,8 @@ bl_info = {
 
 import bpy
 import bmesh
+
+swap_key = 'ACCENT_GRAVE'
 
 def refreshMode(C):
     '''Update scene by going in object mode and returning in previous mode (for armature update)'''
@@ -192,9 +194,9 @@ def register_keymaps():
     addon = bpy.context.window_manager.keyconfigs.addon
     #km = addon.keymaps.new(name = "3D View", space_type = "VIEW_3D")#viewD only
     km = addon.keymaps.new(name = "Window",space_type='EMPTY', region_type='WINDOW')#all view
-    kmi = km.keymap_items.new("selection.as_active_next", type = "ACCENT_GRAVE", value = "PRESS", shift = True)
-    kmi = km.keymap_items.new("selection.as_active_prev", type = "ACCENT_GRAVE", value = "PRESS", shift = True, ctrl = True)
-    kmi = km.keymap_items.new("selection.deselect_active", type = "ACCENT_GRAVE", value = "PRESS", shift = True, alt = True)
+    kmi = km.keymap_items.new("selection.as_active_next", type = swap_key, value = "PRESS", shift = True)
+    kmi = km.keymap_items.new("selection.as_active_prev", type = swap_key, value = "PRESS", shift = True, ctrl = True)
+    kmi = km.keymap_items.new("selection.deselect_active", type = swap_key, value = "PRESS", shift = True, alt = True)
     addon_keymaps.append(km)
 
 
