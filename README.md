@@ -29,6 +29,7 @@ use ² for azerty Fr PC
 
 In vertex paint mode : iterate active group
 
+---
 
 # Version 2.79
 
