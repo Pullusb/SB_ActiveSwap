@@ -1,18 +1,46 @@
 # Active swap
 
-right click, "save Target As"
-## [Download (qwerty)](https://raw.githubusercontent.com/Pullusb/SB_ActiveSwap/master/SB_Active_swap.py)
-(use combination with \` key)
-## [Download (azerty Fr)](https://raw.githubusercontent.com/Pullusb/SB_ActiveSwap/master/SB_Active_swap_azerty_Fr_PC.py)
-(use combination with ² key)  
-
-
-Allow to iterate active object/bones/vertexgroups in selectionselected with shortcuts (shift+\`: next, ctrl+shift+\` : prev)
+Iterate active object/bones/vertexgroups in selection with shortcuts
 <!--may behave unexpectedly in armature edit/pose mode -->
+
+# Version 2.80
+
+### [Download (qwerty)](https://raw.githubusercontent.com/Pullusb/SB_ActiveSwap/master/SB_Active_swap.py) (right click, "save Target As")
+(use combination with \` key)
+
+### [Download (azerty Fr)](https://raw.githubusercontent.com/Pullusb/SB_ActiveSwap/master/SB_Active_swap_azerty_Fr_PC.py) (right click, "save Target As")
+(use combination with ² key)  
 
 ---
 
 ### Description
+
+The shortcuts use the key directly below escape (the left-most from the number top row). This key changes accoding to keyboard layouts...  
+use \` for qwerty  
+use ² for azerty Fr PC  
+
+
+**press ctrl+shift+key**  next object in selection become active  
+**press ctrl+shift+alt+key**  previous object in selection become active
+**press alt+shift+key**  deselect active object (then next object in selection become active)
+
+(shortcut are more complicated than the 2.79 version because \` key is already used a lot in 2.8 !)
+/!\ Seems to have bugs in armature mode for now...
+
+In vertex paint mode : iterate active group
+
+
+# Version 2.79
+
+### [Download 2.79 (qwerty)](https://raw.githubusercontent.com/Pullusb/SB_ActiveSwap/master/SB_Active_swap_279.py) (right click, "save Target As")
+(use combination with \` key)
+
+### [Download 2.79 (azerty Fr)](https://raw.githubusercontent.com/Pullusb/SB_ActiveSwap/master/SB_Active_swap_azerty_Fr_PC_279.py) (right click, "save Target As")
+(use combination with ² key)  
+
+---
+
+### Description 2.79
 
 The shortcuts use the key directly below escape (the left-most from the number top row). This key changes accoding to keyboard layouts...  
 use \` for qwerty  
