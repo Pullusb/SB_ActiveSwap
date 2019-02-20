@@ -5,10 +5,10 @@ Iterate active object/bones/vertexgroups in selection with shortcuts
 
 # Version 2.80
 
-### [Download (qwerty)](https://raw.githubusercontent.com/Pullusb/SB_ActiveSwap/master/SB_Active_swap.py) (right click, "save Target As")
+[**Download (qwerty)**](https://raw.githubusercontent.com/Pullusb/SB_ActiveSwap/master/SB_Active_swap.py) (right click, "save Target As")
 (use combination with \` key)
 
-### [Download (azerty Fr)](https://raw.githubusercontent.com/Pullusb/SB_ActiveSwap/master/SB_Active_swap_azerty_Fr_PC.py) (right click, "save Target As")
+[**Download (azerty Fr)**](https://raw.githubusercontent.com/Pullusb/SB_ActiveSwap/master/SB_Active_swap_azerty_Fr_PC.py) (right click, "save Target As")
 (use combination with ² key)  
 
 ---
@@ -32,10 +32,10 @@ In vertex paint mode : iterate active group
 
 # Version 2.79
 
-### [Download 2.79 (qwerty)](https://raw.githubusercontent.com/Pullusb/SB_ActiveSwap/master/SB_Active_swap_279.py) (right click, "save Target As")
+[**Download 2.79 (qwerty)**](https://raw.githubusercontent.com/Pullusb/SB_ActiveSwap/master/SB_Active_swap_279.py) (right click, "save Target As")
 (use combination with \` key)
 
-### [Download 2.79 (azerty Fr)](https://raw.githubusercontent.com/Pullusb/SB_ActiveSwap/master/SB_Active_swap_azerty_Fr_PC_279.py) (right click, "save Target As")
+[**Download 2.79 (azerty Fr)**](https://raw.githubusercontent.com/Pullusb/SB_ActiveSwap/master/SB_Active_swap_azerty_Fr_PC_279.py) (right click, "save Target As")
 (use combination with ² key)  
 
 ---
