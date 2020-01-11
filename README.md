@@ -11,6 +11,8 @@ Iterate active object/bones/vertexgroups in selection with shortcuts
 [**Download (azerty Fr)**](https://raw.githubusercontent.com/Pullusb/SB_ActiveSwap/master/SB_Active_swap_azerty_Fr_PC.py) (right click, "save Target As")
 (use combination with ² key)  
 
+## [Demo Youtube](https://www.youtube.com/watch?v=43v5kxFkcZk)
+
 ---
 
 ### Description
