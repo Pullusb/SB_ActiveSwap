@@ -17,7 +17,7 @@ Iterate active object/bones/vertexgroups in selection with shortcuts
 
 ### Description
 
-The shortcuts use the key directly below escape (the left-most from the number top row). This key changes accoding to keyboard layouts...  
+The shortcuts use the key directly below escape (the left-most from the number top row). This key changes according to keyboard layouts...  
 use \` for qwerty  
 use ² for azerty Fr PC  
 
@@ -45,7 +45,7 @@ In vertex paint mode : iterate active group
 
 ### Description 2.79
 
-The shortcuts use the key directly below escape (the left-most from the number top row). This key changes accoding to keyboard layouts...  
+The shortcuts use the key directly below escape (the left-most from the number top row). This key changes according to keyboard layouts...  
 use \` for qwerty  
 use ² for azerty Fr PC  
   
@@ -68,7 +68,7 @@ Someday I'll post a version with valid shortcut for french keyboard too... But w
 
 16/11/2017
 - Shortcuts are enabled all over editors (not just 3D-view) imply far less mouse trajectory ;)
-for exemple : allow to let the cursor in properties (over constraints or modifiers...) and quickly iterate to change parameter.
+for example : allow to let the cursor in properties (over constraints or modifiers...) and quickly iterate to change parameter.
 
 21/12/2016
 
